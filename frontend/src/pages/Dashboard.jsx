@@ -10,8 +10,9 @@ import {getGoals, reset} from '../features/goalReducer/goalSlice.js'
 
 //Dashboad Page
 function Dashboard() {
-  //React router navigate hook
+  //React router hooks
   const navigate = useNavigate()
+  // const location = useLocation()
 
   //Dispatch user goals with useDispatch
   const dispatch = useDispatch()
@@ -40,15 +41,16 @@ function Dashboard() {
     }
 
     //Get list of user goals on render/state change
-    dispatch(getGoals())
+    if(user) {
+      dispatch(getGoals())
+    }
 
     //Reset state on unmount of Dashboard page (when navigating out of Dashboard)
     return () => {
       dispatch(reset())
     }
-  }, [user, navigate, isError, message, dispatch])
 
-  // console.log('goals:', goals)
+  }, [user, navigate, isError, message, dispatch])
 
   //Check for loading state
   if(isLoading) {

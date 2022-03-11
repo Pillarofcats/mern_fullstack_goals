@@ -5,8 +5,6 @@ const path = require('path')
 const fs = require('fs')
 //Import custom middleware
 const  { errorHandler } = require('./middlware/errorMiddlware.js')
-//Packages
-const colors = require('colors')
 //Import mongoDB connection
 const connectDB = require('./mongoDB/dbConfig/db.js')
 
