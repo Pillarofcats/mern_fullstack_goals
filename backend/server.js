@@ -30,7 +30,7 @@ if(process.env.NODE_ENV === 'production') {
   app.get('*', (req,res) => {
     res.sendFile((
       //__dirname -> '../' -> frontend -> build -> html
-      path.resolve(__dirname, '../', 'frontend', 'build', 'html')
+      path.resolve(__dirname, '../', 'frontend', 'build', 'index.html')
     ))
   })
 } else {
