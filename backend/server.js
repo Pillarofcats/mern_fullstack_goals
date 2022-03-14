@@ -2,6 +2,7 @@
 const express = require('express');
 const dotenv = require('dotenv').config()
 const path = require('path')
+const cors = require('cors')
 
 //Import custom middleware
 const  { errorHandler } = require('./middlware/errorMiddlware.js')
@@ -17,6 +18,7 @@ const app = express()
 //Express Middleware
 app.use(express.urlencoded({extended: false}))
 app.use(express.json())
+app.use(cors())
 
 //Routes
 app.use('/api/goals', require('./routes/goalRoutes.js'))

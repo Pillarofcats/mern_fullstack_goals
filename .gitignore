@@ -2,8 +2,5 @@
 node_modules
 frontend/node_modules
 
-# production
-frontend/build
-
 #env
 .env
